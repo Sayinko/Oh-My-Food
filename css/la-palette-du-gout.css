@@ -22,11 +22,21 @@ h3 {
   margin-bottom: 7px;
 }
 
+.navbar {
+  margin-bottom: 10px;
+}
+.navbar i {
+  position: relative;
+  top: 26px;
+  left: 20px;
+  font-size: 1.3em;
+}
 .navbar__container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 31px;
 }
 .navbar__container--logo {
   width: 200px;
@@ -54,7 +64,7 @@ h3 {
 .menu h2 {
   font-weight: normal;
   border-bottom: 3px solid #99E2D0;
-  padding-bottom: 3px;
+  padding-bottom: 5px;
   width: 40px;
   font-size: 16px;
   margin: 0;
@@ -75,7 +85,7 @@ h3 {
   padding-right: 40px;
 }
 .menu .menu__container {
-  gap: 10px;
+  gap: 12px;
   display: flex;
   flex-direction: column;
   margin-bottom: 45px;
@@ -89,6 +99,8 @@ h3 {
 .menu .menu__order {
   display: flex;
   justify-content: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 .menu .menu__order--button {
   padding: 15px 40px;

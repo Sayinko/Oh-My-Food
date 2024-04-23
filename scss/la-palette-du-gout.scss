@@ -43,10 +43,20 @@ h3 {
 }
 
 .navbar {
+    margin-bottom: 10px;
+
+    i {
+        position: relative;
+        top: 26px;
+        left: 20px;
+        font-size: 1.3em;
+
+    }
 
     &__container {
         @include display-center();
         width: 100%;
+        height: 31px;
         
     
         &--logo {
@@ -120,7 +130,8 @@ h3 {
     .menu__order {
         display: flex;
         justify-content: center;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
+        margin-top: 0px;
 
         &--button {
         padding: 15px 40px;
