@@ -1,10 +1,13 @@
-$main-color: #9356DC;
-$secondary-color: #FF79DA;
-$third-color: #99E2D0;
-$couleur-fond: #F3F3F3;
+$main-color: #9356dc;
+$secondary-color: #ff79da;
+$third-color: #99e2d0;
+$couleur-fond: #f3f3f3;
 
-@mixin ombre($color) {
-    box-shadow: 0px 3px 9px rgba( 0, 0, 0, 0.2);
+
+/* MIXINS */
+
+@mixin shadow($color) {
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.2);
 }
 
 @mixin display-center {
@@ -13,10 +16,72 @@ $couleur-fond: #F3F3F3;
     align-items: center;
 }
 
-@mixin bouton {
-    border-radius: 20px;
-    padding: 15px;
+@mixin button {
+    display: block;
+    border-radius: 25px;
+    padding: 15px 20px;
+    margin: 10px 10px 40px;
+    color: white;
+    background: linear-gradient(180deg, $secondary-color, $main-color);
+    border: none;
+    z-index: 1;
+    position: relative;
 }
+
+@mixin heart {
+    font-size: 1.6em;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* KEYFRAMES */
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+    }
+    97%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes loader-ball {
+    0%{
+        transform: scale(1);
+        background-color: white;
+    }
+    50% {
+        transform: scale(2);
+    }
+    90% {
+
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes ohmyfood {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* GENERALES */
 
 body {
     margin: 0;
@@ -27,41 +92,175 @@ a {
     text-decoration: none;
 }
 
-p, li {
-   font-family:'Roboto', sans-serif;
+* {
+    font-family: "Roboto", sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Shrikhand', sans-serif;
+
+.loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: lighten($color: $main-color, $amount: 20);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: loader 3000ms forwards;
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .animation__ball {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: $couleur-fond;
+            box-shadow: 2px 0px #9E45B5;
+            animation: loader-ball 3000ms ease-in-out infinite alternate forwards;
+
+            &--one {
+                position: relative;
+                left: -20px;
+            }
+
+            &--two {
+                top: 64px;
+                position: relative;
+                right: -7px;
+                animation-delay: calc(3000ms / 12 * 10);
+            }
+
+            &--three {
+                top: 36px;
+                position: relative;
+                right: 30px;
+                animation-delay: calc(3000ms / 12 * 11);
+            }
+
+            &--four {
+                position: relative;
+                bottom: 34px;
+                right: 39px;
+                animation-delay: calc(3000ms / 12 * 1);
+            }
+
+            &--five {
+                bottom: 63px;
+                position: relative;
+                right: 23px;
+                animation-delay: calc(3000ms / 12 * 2);
+            }
+
+            &--six {
+                bottom: 75px;
+                position: relative;
+                left: 5px;
+                animation-delay: calc(3000ms / 12 * 3);
+            }
+
+            &--seven {
+                top: 77px;
+                position: relative;
+                right: 6px;
+                animation-delay: calc(3000ms / 12 * 9);
+            }
+
+            &--eight {
+                position: relative;
+                bottom: 63px;
+                left: 23px;
+                animation-delay: calc(3000ms / 12 * 4);
+            }
+
+            &--nine {
+                position: relative;
+                bottom: 35px;
+                left: 40px;
+                animation-delay: calc(3000ms / 12 * 5);
+            }
+
+            &--ten {
+                top: 37px;
+                position: relative;
+                left: 30px;
+                animation-delay: calc(3000ms / 12 * 7);
+            }
+
+            &--eleven {
+                position: relative;
+                top: 64px;
+                left: -11px;
+                animation-delay: calc(3000ms / 12 * 8);
+            }
+
+            &--twelve {
+                left: 20px;
+                position: relative;
+                animation-delay: calc(3000ms / 12 * 6);
+            }
+        }
+
+        .animation__name {
+            position: absolute;
+            color: #f3f3f3;
+            font-family: 'Shrikhand', serif;
+            opacity: 0;
+            animation: ohmyfood 4.5s linear forwards;
+            font-size: 1.5em;
+            text-shadow: 3px 0px #9E45B5;
+
+            &--oh {
+                animation-delay: 0s;
+            }
+
+            &--my {
+                animation-delay: 1s;
+            }
+
+            &--food {
+                animation-delay: 2s;
+            }
+        }
+    } 
 }
 
 .navbar {
-
     &__container {
         @include display-center();
         width: 100%;
-        
-    
+
+        @media (min-width: 1024px) {
+            padding: 11px 0px;
+        }
+
         &--logo {
             width: 200px;
             margin: 15px;
         }
 
-        &--icone {
+        &--icon {
             padding-right: 15px;
             display: flex;
             align-items: center;
         }
 
-        &--localisation {
+        &--location {
             width: 100%;
             display: flex;
             justify-content: center;
-            font-weight: 600;
-            background: darken(#F3F3F3, 3%);
+            background: darken(#f3f3f3, 3%);
             margin: 0;
             padding: 10px 0px;
-            box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 12px 3px -10px rgba(0, 0, 0, 0.1);
+
+            @media (min-width: 1024px) {
+                box-shadow: none;
+                padding: 13px 0px;
+            }
         }
 
         &--search {
@@ -72,55 +271,108 @@ h1, h2, h3 {
     }
 }
 
+
 .intro {
     @include display-center();
     flex-direction: column;
     text-align: center;
-    background-color: lighten($couleur-fond, 1%);
-    box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: lighten($couleur-fond, 2%);
+    box-shadow: inset 0 13px 6px -10px rgba(0, 0, 0, 0.3);
+
+    @media (min-width: 1024px) {
+        box-shadow: none;
+    }
 
     &__title {
-         margin: 30px 40px 0px;
+        margin: 40px 45px 0px;
+
+        @media (min-width: 1024px) {
+            font-size: 40px;
+        }
     }
 
     &__text {
-        margin: 10px;
-    }
+        margin: 15px;
+        font-size: 18px;
+        font-weight: 300;
 
-    &__button {
-        padding: 12px 20px;
-        margin: 10px 10px 40px;
-        color: white;
-        background: linear-gradient(180deg, $secondary-color, $main-color);
-        border: none;
-        border-radius: 25px;
-        @include ombre(black);
-
+        @media (min-width: 1024px) {
+            margin: 36px 0px 23px;
+        }
     }
-   
 }
 
-.fonctionnement {
+.button {
+    @include button;
+    @include shadow(black);
+    z-index: 1;
+    position: relative;
+
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        z-index: -1;
+        background: linear-gradient(180deg, lighten($secondary-color, 5%), lighten($main-color, 5%));
+        box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.2);
+        border-radius: 25px;
+        transition: opacity 250ms;
+    }
+
+    @media (min-width: 1024px) {
+        margin: 10px 10px 30px;
+    }
+}
+
+.functioning {
+    @media (min-width: 1024px) {
+        margin: 0px 115px;
+    }
     h2 {
-        padding: 20px 0px 0px 20px;
+        padding: 40px 0px 0px 40px;
+        margin-bottom: 5px;
+        margin-top: 0;
     }
 }
 
 .step {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    margin-right: 20px;
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 40px;
 
-    .step__icone {
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 37px;
+        padding: 5px 45px 30px 45px;
+    }
+
+    .step__icon {
         font-size: 1.3em;
         color: darken($couleur-fond, 40%);
         padding: 0px 20px;
+        padding-right: 18px;
+        padding-left: 12px;
+
+        @media (min-width: 768px) {
+            padding-left: 20px;
+        }
     }
 
-    .step__icone--purple {
+    .step__icon--purple {
         color: $main-color;
-        }
+    }
 
     .step__text {
         @include display-center();
@@ -132,80 +384,142 @@ h1, h2, h3 {
         padding: 20px;
         font-weight: 600;
         border-radius: 20px;
-        @include ombre(black);
+        @include shadow(black);
+        position: relative;
 
+        @media (min-width: 768px) {
+            padding: 20px 8px;
+        }
+
+        @media (min-width: 1024px) {
+            width: 74%;
+            padding: 25px 20px;
+        }
     }
-}
 
-.container {
-    position: relative;
-
-    .container__number {
-        display: inline;
+    .step__number {
         color: white;
         background-color: $main-color;
-        height: 20px;
-        padding: 5px 10px;
+        font-size: 0.9em;
+        height: 9px;
+        padding: 3px 8px 12px 8px;
         border-radius: 30px;
-                }
-            }
+        position: absolute;
+        left: -14px;
+
+        @media (min-width: 768px) {
+            left: -15px;
+            bottom: 24px;
+        }
+
+        @media (min-width: 908px) {
+            left: -15px;
+            bottom: 15px;
+        }
+
+        @media (min-width: 1024px) {
+            left: -15px;
+            bottom: 30px;
+        }
+
+        @media (min-width: 1210px) {
+            left: -15px;
+            bottom: 20px;
+        }
+    }
+}
 
 .restaurants {
     background: $couleur-fond;
     padding-bottom: 40px;
 
     h2 {
-        padding: 40px 20px 10px 20px;
+        padding: 40px 20px 20px 40px;
+        margin: 0;
+
+        @media (min-width: 1024px) {
+            margin: 0px 115px;
+            padding: 40px 20px 30px 40px;
+        }
     }
 
     &__containercards {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0 10px;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: 1 0 45%;
+            gap: 40px;
+            margin: 25px 30px 30px 30px;
+        }
+
+        @media (min-width: 1024px) {
+            display: grid;
+            grid-template-columns: auto auto;
+            margin: 0px 126px;
+            gap: 32px 35px;
+            place-items: center;
+        }
     }
 
     &__card {
-        height: 250px;
+        height: 218px;
         width: 90%;
         background: white;
         margin-bottom: 20px;
         border-radius: 15px;
         position: relative;
 
+        @media (min-width: 768px) {
+            height: 250px;
+            flex: 1 0 45%;
+            margin-bottom: 0px;
+        }
 
-        &--images {
-            height: 180px;
+        &--pictures {
+            height: 153px;
             width: 100%;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
             object-fit: cover;
+
+            @media (min-width: 768px) {
+                height: 185px;
+            }
         }
 
-        &--nouveau {
+        &--new {
             color: #008766;
-            background-color: #99E2D0;
+            background-color: #99e2d0;
             width: 20%;
             padding: 5px 10px;
             border-radius: 2px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
             position: absolute;
             left: 71%;
             bottom: 78%;
             text-align: center;
-
-
         }
 
         &--container {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
         }
 
         &--containername {
-            width: 80%;
+            height: 61px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-            h3, p {
+            h3,
+            p {
                 margin-left: 15px;
             }
 
@@ -224,21 +538,39 @@ h1, h2, h3 {
             }
         }
 
-        &--containericone {
-            width: 20%;
+        &--containericon {
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            position: relative;
 
-            i {
-                font-size: 1.6em;
-                margin-right: 20px;
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 20px;
+                    right: 10px;
+                    background: linear-gradient(180deg, $secondary-color, $main-color);
+                    opacity: 0;
+                    z-index: -1;
+                }
             }
         }
-
-
     }
 
+.heart {
+        @include heart;
+        margin-right: 20px;
+        position: absolute;
+        bottom: 18px;
+        right: 10px;
+        z-index: 1;
 }
 
 footer {
@@ -246,32 +578,76 @@ footer {
     color: white;
     padding: 15px 0;
 
+    @media (min-width: 1024px) {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        padding-top: 40px;
+    }
+
     img {
         padding-left: 20px;
         padding-top: 10px;
-        width: 35%;
-        }
-    
+        width: 115px;
 
+        @media (min-width: 1024px) {
+            padding: 0 45px 10px 20px;
+        }
+    }
 
     ul {
         padding-left: 25px;
+
+        @media (min-width: 1024px) {
+            display: flex;
+            gap: 15px;
+        }
     }
 
-    .liste {
+    .list {
         list-style: none;
         font-size: 18px;
         padding-bottom: 5px;
+        font-weight: 300;
 
-        
-        &--bold {
-            font-weight: 600;
+        @media (min-width: 768px) {
+            font-size: 14px;
         }
 
-        &--icone {
+        &--bold {
+            font-weight: 500;
+        }
+
+        &--icon {
             padding-right: 10px;
             width: 20px;
         }
 
+        &--responsive {
+            @media (min-width: 1024px) {
+                padding-right: 30px;
+            }
+        }
     }
 }
+
+/*
+
+ICONE TEST COEUR MARCHE PAS /
+
+&:hover {
+    &::after {
+        opacity: 1;
+    }
+}
+
+&::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    background: linear-gradient(180deg, #FF79DA, #9356DC);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+} */

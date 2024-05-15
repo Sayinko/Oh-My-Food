@@ -1,0 +1,28 @@
+// HOME // 
+
+.card-restaurant {
+    height: 250px;
+    width: 90%;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    position: relative;
+
+
+    &--pictures {
+        height: 180px;
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+    }
+}
+
+// MENU //
+
+.card-menu {
+    background: white;
+    border-radius: 15px;
+    padding: 11px;
+    @include ombre(black);
+}

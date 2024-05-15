@@ -1,0 +1,35 @@
+.navbar {
+
+    &__container {
+        @include display-center();
+        width: 100%;
+        
+    
+        &--logo {
+            width: 200px;
+            margin: 15px;
+        }
+
+        &--icon {
+            padding-right: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        &--location {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: darken(#F3F3F3, 3%);
+            margin: 0;
+            padding: 10px 0px;
+            box-shadow: inset 0 12px 3px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        &--search {
+            display: none;
+            border: none;
+            font-weight: 600;
+        }
+    }
+}
