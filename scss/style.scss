@@ -80,6 +80,15 @@ $couleur-fond: #f3f3f3;
     }
 }
 
+@keyframes heart {
+    0% {
+        transform:scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 /* GENERALES */
 
@@ -355,7 +364,7 @@ a {
     @media (min-width: 768px) {
         flex-direction: row;
         gap: 37px;
-        padding: 5px 45px 30px 45px;
+        padding: 5px 45px 0px 45px;
     }
 
     .step__icon {
@@ -504,6 +513,11 @@ a {
             left: 71%;
             bottom: 78%;
             text-align: center;
+
+            @media (min-width: 768px) {
+                width: 16%;
+                left: 75%;
+            }
         }
 
         &--container {
@@ -570,7 +584,33 @@ a {
         position: absolute;
         bottom: 18px;
         right: 10px;
-        z-index: 1;
+
+        &:hover {
+            &::after {
+                opacity: 1;
+                animation: heart 1500ms ease-in-out;
+                transform-origin: 54% 100%;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: 0px;
+            bottom: 2px;
+            z-index: 1;
+            overflow: hidden;
+            width: 100%;
+            height: 95%;
+            background: linear-gradient(180deg, $main-color, $secondary-color 58%);
+            mask-image: url('../images-texte-ohmyfood/heart-solid.svg');
+            mask-repeat: no-repeat;
+            mask-position: center;
+            mask-size: 101%;
+            transition: opacity 300ms ease-in-out;
+        }
 }
 
 footer {
