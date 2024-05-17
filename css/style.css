@@ -527,26 +527,26 @@ a {
 }
 .heart:hover::after {
   opacity: 1;
-  animation: heart 1500ms ease-in-out;
-  transform-origin: 54% 100%;
+  animation: heart 1000ms ease-in-out;
+  transform-origin: 50% 97%;
 }
 .heart::after {
   content: "";
   position: absolute;
   opacity: 0;
   top: 0;
-  left: 0px;
+  left: -2px;
   bottom: 2px;
   z-index: 1;
   overflow: hidden;
-  width: 100%;
+  width: 115%;
   height: 95%;
   background: linear-gradient(180deg, #9356dc, #ff79da 58%);
   mask-image: url("../images-texte-ohmyfood/heart-solid.svg");
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-size: 101%;
-  transition: opacity 300ms ease-in-out;
+  mask-size: 90%;
+  transition: opacity 200ms ease-in-out;
 }
 
 footer {

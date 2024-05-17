@@ -159,28 +159,25 @@ h3 {
   padding-left: 40px;
   transition: opacity 1000ms ease-in-out;
 }
-.menu .menu__title .heart:hover {
-  opacity: 0;
-}
 .menu .menu__title .heart:hover::after {
   opacity: 1;
-  animation: heart 1500ms ease-in-out;
-  transform-origin: 48% 56%;
+  animation: heart 1000ms ease-in-out;
+  transform-origin: 47% 60%;
 }
 .menu .menu__title .heart::after {
   content: "";
   position: absolute;
   opacity: 0;
-  top: 0;
-  left: 20px;
+  top: 0px;
+  left: 16.5px;
   z-index: 1;
-  width: 58%;
+  width: 72%;
   height: 99%;
   background: linear-gradient(180deg, #9356DC, #FF79DA 58%);
   mask-image: url("../images-texte-ohmyfood/heart-solid.svg");
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-size: contain;
+  mask-size: 80%;
   transition: opacity 300ms ease-in-out;
 }
 @media (min-width: 768px) {
