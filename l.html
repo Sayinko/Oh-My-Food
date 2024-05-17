@@ -1,0 +1,118 @@
+<div class="titre-ordre">
+    <div class="titre-ordre-plat">
+        <div class="titre-ordre-plat-div">
+             <h2>
+                 ENTRÉES
+             </h2>
+             <div class="line"></div>
+         </div>
+         <div class="liste-plat">
+             <div class="vignette-plat vignette-plat-1">
+                 <div class="vignette-plat-nom">
+                     <h3>
+                         Fricassée d'escargot sqdsqd qsd
+                     </h3>
+                     <div class="vignette-plat-nom-info">
+                         <p class="ingredient">
+                             Au piment d'espeletteq qsd qsd 
+                         </p>
+                         <p class="plat-detail-prix">
+                             25€
+                         </p>
+                     </div>
+                 </div>
+                 <div class="plat-select">
+                     <div class="cercle-check">
+                         <p>✔</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>  
+ </div>
+<style type="text/css">
+.liste-plat {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+.vignette-plat {
+ display: flex;
+ position: relative;
+ cursor: pointer;
+ margin: 10px 0px 10px 0px;
+ border-radius: 15px;
+ padding: 10px;
+ width: auto;
+ background-color: white;
+ overflow: hidden;
+ box-shadow: 2px 2px 10px #CCC;
+ -webkit-animation: vignette 300ms backwards;
+ animation: vignette 300ms backwards;
+}
+.vignette-plat-nom {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ overflow: hidden;
+ transition: all 450ms ease-in-out;
+}
+.vignette-plat .ingredient, .vignette-plat h3 {
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+}
+.vignette-plat-nom h3 {
+ margin: 0px 35px 5px 0px;
+}
+h1, h2, h3, p {
+ margin: 0px;
+ color: black;
+}
+.vignette-plat-nom-info {
+ display: flex;
+ justify-content: space-between;
+}
+.plat-detail-prix {
+ padding-left: 10px;
+ transition: all 450ms ease-in-out;
+}
+.vignette-plat:hover .vignette-plat-nom,
+.vignette-plat:hover .plat-detail-prix {
+ padding-right: 35px;
+ transition: all 450ms ease-in-out;
+}
+.vignette-plat:hover .plat-select {
+ transform: translate(-70px);
+}
+
+.plat-select {
+ position: absolute;
+ transition: all 450ms ease-in-out;
+ width: 70px;
+ height: 65px;
+ right: -70px;
+ top: 0px;
+ border-radius: 0px 15px 15px 0px;
+ background-color: #99E2D0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+@keyframes vignette {
+ 0% {
+ -webkit-animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+ animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+ transform: translateY(0.5rem);
+ opacity: 0%;
+}
+100% {
+ -webkit-animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+ animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+ opacity: 100%;
+ transform: translateY(0rem);
+}
+}
+</style>

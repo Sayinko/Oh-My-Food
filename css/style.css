@@ -9,6 +9,7 @@
   }
   100% {
     opacity: 0;
+    display: none;
   }
 }
 @keyframes loader-ball {
@@ -62,7 +63,7 @@ a {
 .loader {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   background-color: #c9abee;
   z-index: 2;
   display: flex;

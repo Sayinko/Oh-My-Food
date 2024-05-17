@@ -46,6 +46,7 @@ $couleur-fond: #f3f3f3;
     }
     100% {
         opacity: 0;
+        display: none;
     }
 }
 
@@ -109,7 +110,7 @@ a {
 .loader {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     background-color: lighten($color: $main-color, $amount: 20);
     z-index: 2;
     display: flex;

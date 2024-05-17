@@ -157,10 +157,14 @@ h3 {
   display: flex;
   align-items: center;
   padding-left: 40px;
+  transition: opacity 1000ms ease-in-out;
+}
+.menu .menu__title .heart:hover {
+  opacity: 0;
 }
 .menu .menu__title .heart:hover::after {
   opacity: 1;
-  animation: heart 2000ms ease-in-out;
+  animation: heart 1500ms ease-in-out;
   transform-origin: 48% 56%;
 }
 .menu .menu__title .heart::after {
@@ -212,7 +216,7 @@ h3 {
 }
 .menu__container--card:hover::after {
   opacity: 1;
-  animation: check 300ms ease-out forwards;
+  transform: translateX(-56px);
 }
 .menu__container--card::after {
   content: url("../images-texte-ohmyfood/circle-check-solid.svg");
@@ -223,7 +227,7 @@ h3 {
   height: 100%;
   background-color: #99E2D0;
   position: absolute;
-  right: 0;
+  right: -56px;
   top: 0;
   transform-origin: 100% 0%;
   display: flex;
@@ -231,6 +235,7 @@ h3 {
   justify-content: center;
   overflow: visible;
   z-index: -1;
+  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
 }
 @media (min-width: 768px) {
   .menu__container--card {
@@ -240,6 +245,8 @@ h3 {
 .menu__container--card .price {
   /*transition: transform 300ms;*/
   font-weight: 700;
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
 }
 .menu__container--description {
   white-space: nowrap;
@@ -267,17 +274,9 @@ h3 {
 }
 
 .menu__container--card:hover .price {
-  animation: price 300ms forwards ease-out;
+  transform: translateX(-53px);
 }
 
-@keyframes price {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-55px);
-  }
-}
 .enter__element {
   animation-name: enter__element;
   animation-duration: 3s;
