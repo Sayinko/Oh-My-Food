@@ -81,7 +81,7 @@ a {
   width: 10px;
   height: 10px;
   border-radius: 10px;
-  background-color: #f3f3f3;
+  background-color: #f6f6f6;
   box-shadow: 2px 0px #9E45B5;
   animation: loader-ball 3000ms ease-in-out infinite alternate forwards;
 }
@@ -197,7 +197,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
-  background: #ebebeb;
+  background: #eaeaea;
   margin: 0;
   padding: 10px 0px;
   box-shadow: inset 0 12px 3px -10px rgba(0, 0, 0, 0.1);
@@ -220,7 +220,7 @@ a {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: #fbfbfb;
   box-shadow: inset 0 13px 6px -10px rgba(0, 0, 0, 0.3);
 }
 @media (min-width: 1024px) {
@@ -311,7 +311,7 @@ a {
 }
 .step .step__icon {
   font-size: 1.3em;
-  color: #8d8d8d;
+  color: #909090;
   padding: 0px 20px;
   padding-right: 18px;
   padding-left: 12px;
@@ -330,7 +330,7 @@ a {
   align-items: center;
   font-weight: normal;
   color: black;
-  background-color: #f3f3f3;
+  background-color: #f6f6f6;
   justify-content: flex-start;
   width: 80%;
   padding: 20px;
@@ -386,7 +386,7 @@ a {
 }
 
 .restaurants {
-  background: #f3f3f3;
+  background: #f6f6f6;
   padding-bottom: 40px;
 }
 .restaurants h2 {
@@ -519,34 +519,35 @@ a {
 .heart {
   font-size: 1.6em;
   position: relative;
-  z-index: 1;
   margin-right: 20px;
   position: absolute;
   bottom: 18px;
   right: 10px;
 }
-.heart:hover::after {
-  opacity: 1;
-  animation: heart 1000ms ease-in-out;
-  transform-origin: 50% 97%;
-}
-.heart::after {
-  content: "";
+
+.full {
+  margin-right: 20px;
   position: absolute;
+  bottom: 18px;
+  right: 10px;
+  font-size: 1.6em;
+  color: transparent;
+  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
   opacity: 0;
-  top: 0;
-  left: 0px;
-  bottom: 0px;
-  z-index: 1;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, #9356dc, #ff79da 58%);
-  mask-image: url("../images-texte-ohmyfood/heart-solid.svg");
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: 100%;
-  transition: opacity 200ms ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.container_heart:hover .full {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+  font-size: 1.6em;
+}
+
+.container_heart:hover .heart {
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
 footer {
