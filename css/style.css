@@ -9,7 +9,8 @@
   }
   100% {
     opacity: 0;
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
   }
 }
 @keyframes loader-ball {
