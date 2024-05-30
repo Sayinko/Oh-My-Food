@@ -59,7 +59,8 @@ $couleur-fond: #f6f6f6 ;
     }
     100% {
         opacity: 0;
-        display: none;
+        visibility: hidden;
+        pointer-events: none;
     }
 }
 
@@ -70,9 +71,6 @@ $couleur-fond: #f6f6f6 ;
     }
     50% {
         transform: scale(2);
-    }
-    90% {
-
     }
     100% {
         transform: scale(1);

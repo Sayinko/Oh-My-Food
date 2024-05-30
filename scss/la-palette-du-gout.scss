@@ -192,7 +192,7 @@ h3 {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin-right: 50px;
+        margin-right: 65px;
     }
 
     .menu__title {
@@ -223,7 +223,6 @@ h3 {
 .container_heart:hover .full {
     opacity: 1;
     transition: all 1s ease-in-out;
-    font-size: 1.6em;
 }
 
 .container_heart:hover .heart {
@@ -299,7 +298,7 @@ h3 {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            margin-right: 66px;
+            padding-right: 66px;
         }
     }
 
@@ -339,6 +338,10 @@ h3 {
     &--three {
         animation-delay: 1000ms;
     }
+
+    &--four {
+        animation-delay: 1500ms;
+    }
 }
 
 .main__element {
@@ -347,14 +350,14 @@ h3 {
     animation-timing-function: ease-in-out;
     opacity: 0;
     animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation-delay: 2500ms;
 
     &--two {
-        animation-delay: 2500ms;
+        animation-delay: 3000ms;
     }
 
     &--three {
-        animation-delay: 3000ms;
+        animation-delay: 3500ms;
     }
 }
 
@@ -364,19 +367,19 @@ h3 {
     animation-timing-function: ease-in-out;
     opacity: 0;
     animation-fill-mode: forwards;
-    animation-delay: 4s;
+    animation-delay: 4500ms;
 
     &--one {
-        animation-delay: 2500ms;
-    }
-    &--two {
-        animation-delay: 3000ms;
-    }
-    &--three {
         animation-delay: 3500ms;
     }
-    &--four {
+    &--two {
         animation-delay: 4000ms;
+    }
+    &--three {
+        animation-delay: 4500ms;
+    }
+    &--four {
+        animation-delay: 5000ms;
     }
 
 }
